@@ -34,10 +34,9 @@ import { FieldDefinition } from '../../core/models/form.models';
       display: grid;
       grid-template-columns: 4px 1fr;
       gap: 14px;
-      background: var(--ff-bg-surface);
-      border: 1px solid var(--ff-border);
-      border-radius: var(--ff-radius-md);
-      padding: 16px 18px;
+      background: transparent;
+      border-bottom: 1px solid var(--ff-border);
+      padding: 14px 2px 16px;
     }
     .field-tab {
       border-radius: 2px;

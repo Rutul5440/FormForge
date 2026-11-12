@@ -71,6 +71,8 @@ import { FieldShellComponent } from './field-shell.component';
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       padding: 6px 10px;
       border-top: 1px solid var(--ff-border);
       background: var(--ff-bg-rail);
@@ -83,6 +85,8 @@ import { FieldShellComponent } from './field-shell.component';
       height: 28px;
       padding: 0 10px;
       font-size: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
   `]
 })
