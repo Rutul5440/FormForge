@@ -1,0 +1,38 @@
+# Impeccable local design/planning state & agent files (excluded from Git per user preference)
+.impeccable/
+PRODUCT.md
+DESIGN.md
+.agent/
+.gemini/
+*.plan.md
+implementation_plan.md
+
+# .NET / C#
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+TestResults/
+*.trx
+*.coverage
+appsettings.Development.json
+appsettings.*.local.json
+
+# Angular / Node
+node_modules/
+dist/
+.angular/
+tmp/
+out-tsc/
+coverage/
+*.tsbuildinfo
+
+# Logs & OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
