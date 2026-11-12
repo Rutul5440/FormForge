@@ -86,3 +86,4 @@ export function createFieldFromType(type: FieldType, existingFields: FieldDefini
     validation: type === 'text' ? { maxLength: 250 } : undefined
   };
 }
+

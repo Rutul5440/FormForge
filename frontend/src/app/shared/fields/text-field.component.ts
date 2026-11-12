@@ -50,3 +50,4 @@ export class TextFieldComponent {
     return Boolean(this.serverError) || (this.control.invalid && (this.control.dirty || this.control.touched));
   }
 }
+

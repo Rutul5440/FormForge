@@ -146,3 +146,4 @@ cd frontend
 npm run build
 npx ng test --watch=false --browsers=ChromeHeadless
 ```
+
