@@ -1,6 +1,7 @@
 using FormForge.Api.Data;
 using FormForge.Api.FieldRegistry;
 using FormForge.Api.Models;
+using FormForge.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +26,7 @@ builder.Services.AddSingleton<IFieldTypeHandler, DateFieldHandler>();
 builder.Services.AddSingleton<IFieldTypeHandler, DropdownFieldHandler>();
 builder.Services.AddSingleton<IFieldTypeHandler, SignatureFieldHandler>();
 builder.Services.AddSingleton<FieldRegistryService>();
+builder.Services.AddScoped<ExcelExportService>();
 
 builder.Services.AddCors(options =>
 {
