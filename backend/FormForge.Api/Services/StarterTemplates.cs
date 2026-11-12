@@ -187,3 +187,4 @@ public static class StarterTemplates
     public static StarterTemplateDefinition? FindByKey(string key) =>
         All.FirstOrDefault(t => string.Equals(t.Key, key, StringComparison.OrdinalIgnoreCase));
 }
+

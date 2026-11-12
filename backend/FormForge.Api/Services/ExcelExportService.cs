@@ -97,6 +97,14 @@ public sealed class ExcelExportService(FieldRegistryService registry)
         }
 
         ws.Columns(1, Math.Max(1, headers.Count)).AdjustToContents(minWidth: 14, maxWidth: 48);
+        for (int fIdx = 0; fIdx < schema.Fields.Count; fIdx++)
+        {
+            if (string.Equals(schema.Fields[fIdx].Type, "signature", StringComparison.OrdinalIgnoreCase))
+            {
+                int sigCol = fIdx + 4;
+                ws.Column(sigCol).Width = Math.Max(ws.Column(sigCol).Width, 22);
+            }
+        }
         ws.SheetView.FreezeRows(1);
 
         using var outStream = new MemoryStream();

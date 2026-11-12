@@ -58,3 +58,4 @@ public sealed record StarterTemplateDefinition(
     string Description,
     FormSchema Schema
 );
+

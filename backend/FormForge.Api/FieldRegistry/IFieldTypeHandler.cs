@@ -21,3 +21,4 @@ public interface IFieldTypeHandler
 
     string FormatCellText(FieldDefinition field, JsonElement? rawValue);
 }
+

@@ -39,12 +39,13 @@ import { FormApiService } from '../../core/services/form-api.service';
         <div class="template-grid">
           @for (tpl of templates(); track tpl.key) {
             <article class="tpl-card">
+              <h2>{{ tpl.title }}</h2>
+
               <div class="tpl-top">
                 <span class="cat-badge">{{ tpl.category }}</span>
                 <span class="mono field-count">{{ tpl.schema.fields.length }} fields</span>
               </div>
 
-              <h2>{{ tpl.title }}</h2>
               <p class="tpl-desc">{{ tpl.description }}</p>
 
               <ul class="field-preview-list" aria-label="Included fields">

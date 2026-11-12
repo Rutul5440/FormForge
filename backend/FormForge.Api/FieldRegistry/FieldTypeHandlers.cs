@@ -54,13 +54,16 @@ public sealed class TextFieldHandler : IFieldTypeHandler
         normalizedValue = null;
         error = null;
 
-        string text = rawValue is { ValueKind: JsonValueKind.String } el
-            ? (el.GetString() ?? string.Empty).Trim()
-            : rawValue is null or { ValueKind: JsonValueKind.Null or JsonValueKind.Undefined }
-                ? string.Empty
-                : throwFormatMarker();
-
-        if (text == "__INVALID_TYPE__")
+        string text;
+        if (rawValue is null || rawValue.Value.ValueKind is JsonValueKind.Null or JsonValueKind.Undefined)
+        {
+            text = string.Empty;
+        }
+        else if (rawValue.Value.ValueKind == JsonValueKind.String)
+        {
+            text = (rawValue.Value.GetString() ?? string.Empty).Trim();
+        }
+        else
         {
             error = $"{field.Label} must be a text value.";
             return false;
@@ -111,8 +114,6 @@ public sealed class TextFieldHandler : IFieldTypeHandler
 
         normalizedValue = text;
         return true;
-
-        static string throwFormatMarker() => "__INVALID_TYPE__";
     }
 
     public string FormatCellText(FieldDefinition field, JsonElement? rawValue) =>
@@ -503,3 +504,4 @@ public sealed class FieldRegistryService(IEnumerable<IFieldTypeHandler> handlers
         return (errors.Count == 0, normalized, errors);
     }
 }
+

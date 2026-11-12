@@ -99,3 +99,4 @@ public sealed class PublicFormsController(FormForgeDbContext db, FieldRegistrySe
             });
     }
 }
+

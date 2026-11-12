@@ -80,7 +80,10 @@ import { FormApiService } from '../../core/services/form-api.service';
               </button>
             }
             <a [routerLink]="['/fill', p.slug]" class="ff-btn ff-btn-ghost open-fill-link">
-              Open Public Fill Form ↗
+              Open Public Fill Form
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5.5 10.5 11.5 4.5M6.5 4.5h5v5" />
+              </svg>
             </a>
           </div>
 

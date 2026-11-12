@@ -278,7 +278,11 @@ import { DynamicFormRendererComponent } from '../../shared/dynamic-form-renderer
                               class="drag-handle"
                               title="Drag to reorder"
                               aria-label="Drag handle">
-                              ⋮⋮
+                              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                <circle cx="5.5" cy="3.5" r="1.2" /><circle cx="10.5" cy="3.5" r="1.2" />
+                                <circle cx="5.5" cy="8" r="1.2" /><circle cx="10.5" cy="8" r="1.2" />
+                                <circle cx="5.5" cy="12.5" r="1.2" /><circle cx="10.5" cy="12.5" r="1.2" />
+                              </svg>
                             </span>
                           }
                           <span class="mono idx-num">{{ (idx + 1).toString().padStart(2, '0') }}</span>
@@ -296,31 +300,44 @@ import { DynamicFormRendererComponent } from '../../shared/dynamic-form-renderer
                               type="button"
                               class="icon-btn"
                               title="Move up"
+                              aria-label="Move field up"
                               [disabled]="idx === 0"
                               (click)="moveField(idx, -1)">
-                              ↑
+                              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M8 12.5V3.5M4.5 7 8 3.5 11.5 7" />
+                              </svg>
                             </button>
                             <button
                               type="button"
                               class="icon-btn"
                               title="Move down"
+                              aria-label="Move field down"
                               [disabled]="idx === fields().length - 1"
                               (click)="moveField(idx, 1)">
-                              ↓
+                              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M8 3.5v9M4.5 9 8 12.5 11.5 9" />
+                              </svg>
                             </button>
                             <button
                               type="button"
                               class="icon-btn"
                               title="Duplicate field"
+                              aria-label="Duplicate field"
                               (click)="duplicateField(idx)">
-                              ⧉
+                              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" />
+                                <path d="M3.5 10.5H3a1.5 1.5 0 0 1-1.5-1.5V3A1.5 1.5 0 0 1 3 1.5h6A1.5 1.5 0 0 1 10.5 3v.5" />
+                              </svg>
                             </button>
                             <button
                               type="button"
                               class="icon-btn danger"
                               title="Remove field"
+                              aria-label="Remove field"
                               (click)="removeField(idx)">
-                              ×
+                              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
+                                <path d="M4 4l8 8M12 4l-8 8" />
+                              </svg>
                             </button>
                           }
                         </div>
@@ -329,7 +346,9 @@ import { DynamicFormRendererComponent } from '../../shared/dynamic-form-renderer
                       <div class="field-preview-box">
                         @if (field.type === 'dropdown') {
                           <span>{{ field.options?.join(' · ') || 'No options configured' }}</span>
-                          <span>▾</span>
+                          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                          </svg>
                         } @else if (field.type === 'signature') {
                           <span>Signature ink pad (PNG capture)</span>
                         } @else if (field.type === 'date') {
